@@ -1,5 +1,7 @@
 To Train
 
+	python train.py --resume=weights/ssd300_COCO_5000.pth  --start_iter=?
+
 To Eval
 	python eval.py --trained_model=weights/ssd300_COCO_5000.pth --voc_root=C:\Users\nilab\data\VOCdevkit\
 	python eval.py --trained_model=weights/ssd300_mAP_77.43_v2.pth --voc_root=C:\Users\nilab\data\VOCdevkit\
