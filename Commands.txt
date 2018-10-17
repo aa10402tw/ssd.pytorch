@@ -1,7 +1,8 @@
 To Train
 
 To Eval
+	python eval.py --trained_model=weights/ssd300_COCO_5000.pth --voc_root=C:\Users\nilab\data\VOCdevkit\
 	python eval.py --trained_model=weights/ssd300_mAP_77.43_v2.pth --voc_root=C:\Users\nilab\data\VOCdevkit\
 
 To Test
-	python test.py --trained_model=weights/ssd300_mAP_77.43_v2.pth --voc_root=C:\Users\nilab\data\VOCdevkit
+	python test.py --trained_model=weights/ssd300_mAP_77.43_v2.pth --voc_root=C:\Users\nilab\data\VOCdevkit\
