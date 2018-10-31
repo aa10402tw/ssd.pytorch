@@ -5,6 +5,7 @@ from torch.autograd import Variable
 from layers import *
 from data import voc, coco
 import os
+import time
 
 
 class SSD(nn.Module):
@@ -207,3 +208,17 @@ def build_ssd(phase, size=300, num_classes=21):
                                      add_extras(extras[str(size)], 1024),
                                      mbox[str(size)], num_classes)
     return SSD(phase, size, base_, extras_, head_, num_classes)
+
+
+
+if __name__ == '__main__':
+    # net = build_ssd('train', size=300, num_classes=21)
+    net = build_ssd('train', size=300, num_classes=21)
+    pytorch_total_params = sum(p.numel() for p in net.parameters() if p.requires_grad)
+    print("Total", pytorch_total_params)
+    # net.eval()
+    # print(net)
+    begin = time.time()
+    x = torch.rand(1, 3, 300, 300)
+    y = net(x)
+    print(time.time() - begin)
